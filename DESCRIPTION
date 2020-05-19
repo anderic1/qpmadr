@@ -1,0 +1,17 @@
+Package: qpmadR
+Type: Package
+Title: R Interface to the 'qpmad' Quadratic Programming Solver
+Version: 0.1.0
+Date: 2020-05-19
+Author: Eric Anderson, Alexander Sherikov
+Maintainer: Eric Anderson <anderic1@gmx.com>
+Description: R interface to the 'qpmad' quadratic programming solver. 'qpmad'
+    is an implementation of the Goldfarb-Idnani dual active set algorithm for 
+    quadratic programming by Alexander Sherikov.
+License: GPL (>= 2)
+Depends: R (>= 3.0.2)
+Imports: Rcpp, checkmate
+LinkingTo: Rcpp, RcppEigen (>= 0.3.3.3.0)
+RoxygenNote: 7.1.0
+Encoding: UTF-8
+Suggests: tinytest
