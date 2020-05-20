@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // solveqpImpl
 Rcpp::List solveqpImpl(Eigen::MatrixXd& H, const Eigen::VectorXd& h, const Eigen::VectorXd& lb, const Eigen::VectorXd& ub, const Eigen::MatrixXd& A, const Eigen::VectorXd& Alb, const Eigen::VectorXd& Aub, bool isFactorized, int maxIter, double tol, bool checkPD);
-RcppExport SEXP _qpmadR_solveqpImpl(SEXP HSEXP, SEXP hSEXP, SEXP lbSEXP, SEXP ubSEXP, SEXP ASEXP, SEXP AlbSEXP, SEXP AubSEXP, SEXP isFactorizedSEXP, SEXP maxIterSEXP, SEXP tolSEXP, SEXP checkPDSEXP) {
+RcppExport SEXP _qpmadr_solveqpImpl(SEXP HSEXP, SEXP hSEXP, SEXP lbSEXP, SEXP ubSEXP, SEXP ASEXP, SEXP AlbSEXP, SEXP AubSEXP, SEXP isFactorizedSEXP, SEXP maxIterSEXP, SEXP tolSEXP, SEXP checkPDSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -29,11 +29,11 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_qpmadR_solveqpImpl", (DL_FUNC) &_qpmadR_solveqpImpl, 11},
+    {"_qpmadr_solveqpImpl", (DL_FUNC) &_qpmadr_solveqpImpl, 11},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_qpmadR(DllInfo *dll) {
+RcppExport void R_init_qpmadr(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

@@ -1,5 +1,5 @@
 
-library(qpmadR)
+library(qpmadr)
 
 n = 6
 k = 3
