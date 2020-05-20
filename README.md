@@ -1,22 +1,22 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# qpmadR
+# qpmadr
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-`qpmadR` provides R-bindings to the quadratic programming-solver
+`qpmadr` provides R-bindings to the quadratic programming-solver
 `qpmad`, written by [Alexander Sherikov](https://github.com/asherikov).
 
 ## Installation
 
-You can install the released version of qpmadR from
+You can install the released version of qpmadr from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("qpmadR")
+install.packages("qpmadr")
 ```
 
 ## Example
@@ -36,7 +36,7 @@ The code below will run a benchmark against the quadprog solver for
 n=100, checking that both give the same results.
 
 ``` r
-library(qpmadR)
+library(qpmadr)
 library(quadprog)
 library(microbenchmark)
 
@@ -47,7 +47,7 @@ n = 100
 
 H = crossprod(matrix(rnorm(n*n), n))
 
-# constraint specification for qpmadR
+# constraint specification for qpmadr
 lb = -2
 ub = 2
 A = matrix(1, 1, n)
@@ -62,7 +62,7 @@ b = c(n, rep_len(-2, 2*n))
 
 bm = microbenchmark(
   check    = "equal",
-  qpmadR   = qpmadR::solveqp(H, lb=lb, ub=ub, A=A, Alb=Alb, Aub=Aub)$solution,
+  qpmadr   = qpmadr::solveqp(H, lb=lb, ub=ub, A=A, Alb=Alb, Aub=Aub)$solution,
   quadprog = quadprog::solve.QP(H, numeric(n), At, b, meq=1)$solution
 )
 
@@ -72,12 +72,12 @@ knitr::kable(summary(bm, "relative"), digits=1)
 
 | expr     | min |  lq | mean | median |  uq | max | neval |
 | :------- | --: | --: | ---: | -----: | --: | --: | ----: |
-| qpmadR   | 1.0 | 1.0 |  1.0 |    1.0 | 1.0 | 1.0 |   100 |
-| quadprog | 2.5 | 2.5 |  2.3 |    2.6 | 2.3 | 1.7 |   100 |
+| qpmadr   | 1.0 | 1.0 |  1.0 |    1.0 | 1.0 | 1.0 |   100 |
+| quadprog | 2.7 | 2.5 |  2.5 |    2.8 | 2.4 | 2.5 |   100 |
 
 Timings are relative.
 
 ## C++-interface
 
-The solver is a c++ header-only library can be used in other packages
-via the LinkingTo: field
+The solver is a c++ header-only library and can be used in other
+packages via the LinkingTo: field

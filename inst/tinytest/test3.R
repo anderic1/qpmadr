@@ -1,5 +1,5 @@
 
-library(qpmadR)
+library(qpmadr)
 # The test problem is the following:
 # Given:
 # G =  4 -2   g0^T = [6 0]

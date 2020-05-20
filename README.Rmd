@@ -13,20 +13,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-# qpmadR
+# qpmadr
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 
-`qpmadR` provides R-bindings to the quadratic programming-solver `qpmad`, written by [Alexander Sherikov](https://github.com/asherikov).
+`qpmadr` provides R-bindings to the quadratic programming-solver `qpmad`, written by [Alexander Sherikov](https://github.com/asherikov).
 
 ## Installation
 
-You can install the released version of qpmadR from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of qpmadr from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("qpmadR")
+install.packages("qpmadr")
 ```
 
 ## Example
@@ -46,7 +46,7 @@ The code below will run a benchmark against the quadprog solver for n=100, check
 
 
 ```{r example}
-library(qpmadR)
+library(qpmadr)
 library(quadprog)
 library(microbenchmark)
 
@@ -57,7 +57,7 @@ n = 100
 
 H = crossprod(matrix(rnorm(n*n), n))
 
-# constraint specification for qpmadR
+# constraint specification for qpmadr
 lb = -2
 ub = 2
 A = matrix(1, 1, n)
@@ -72,7 +72,7 @@ b = c(n, rep_len(-2, 2*n))
 
 bm = microbenchmark(
   check    = "equal",
-  qpmadR   = qpmadR::solveqp(H, lb=lb, ub=ub, A=A, Alb=Alb, Aub=Aub)$solution,
+  qpmadr   = qpmadr::solveqp(H, lb=lb, ub=ub, A=A, Alb=Alb, Aub=Aub)$solution,
   quadprog = quadprog::solve.QP(H, numeric(n), At, b, meq=1)$solution
 )
 

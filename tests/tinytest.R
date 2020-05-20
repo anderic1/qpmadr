@@ -1,5 +1,5 @@
 
 if ( requireNamespace("tinytest") ){
-  tinytest::test_package("qpmadR")
+  tinytest::test_package("qpmadr")
 }
 

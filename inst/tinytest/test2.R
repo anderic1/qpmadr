@@ -1,4 +1,4 @@
-library(qpmadR)
+library(qpmadr)
 
 
 ## Assume we want to minimize: -(0 5 0) %*% b + 1/2 b^T b
