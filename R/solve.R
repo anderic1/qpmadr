@@ -19,8 +19,8 @@
 #' @seealso \code{\link{qpmadParameters}}
 #'
 #' @return At least one of \code{lb}, \code{ub} or \code{A} must be specified. If \code{A} has been
-#' specified then also at least one of \code{Alb} or \code{Aub}. Returns a list with elements \code{solution},
-#' \code{status} and \code{message}. If \code{status} = \code{0} the algorithm has converged.
+#' specified then also at least one of \code{Alb} or \code{Aub}. Returns a list with elements \code{solution} (the solution vector),
+#' \code{status} (a status code) and \code{message} (a human readable message). If \code{status} = \code{0} the algorithm has converged.
 #' Possible status codes:
 #' \itemize{
 #'   \item{\code{0}: Ok}
@@ -140,7 +140,12 @@ quadprog.solve.QP = function(Dmat, d, Amat, bvec, meq=0, factorized = FALSE) {
 #' @param tol Convergence tolerance.
 #' @param checkPD If \code{FALSE} then \code{H} is assumed to be positive definite and no checks are made.
 #'
+#' @return a list suitable to be used as the pars-argument to \code{\link{solveqp}}
 #' @seealso \code{\link{solveqp}}
+#'
+#' @examples
+#'
+#' qpmadParameters(checkPD = FALSE)
 #'
 #' @export
 qpmadParameters = function(isFactorized = FALSE, maxIter = -1, tol = 1e-12, checkPD = TRUE) {

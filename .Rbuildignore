@@ -3,3 +3,5 @@
 ^.*\.dll$
 ^LICENSE\.md$
 ^README\.Rmd$
+^\.vscode$
+^cran-comments\.md$

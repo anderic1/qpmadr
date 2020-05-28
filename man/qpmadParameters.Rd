@@ -20,8 +20,16 @@ qpmadParameters(
 
 \item{checkPD}{If \code{FALSE} then \code{H} is assumed to be positive definite and no checks are made.}
 }
+\value{
+a list suitable to be used as the pars-argument to \code{\link{solveqp}}
+}
 \description{
 Set qpmad parameters
+}
+\examples{
+
+qpmadParameters(checkPD = TRUE)
+
 }
 \seealso{
 \code{\link{solveqp}}

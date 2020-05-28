@@ -30,8 +30,8 @@ solveqp(
 }
 \value{
 At least one of \code{lb}, \code{ub} or \code{A} must be specified. If \code{A} has been
-specified then also at least one of \code{Alb} or \code{Aub}. Returns a list with elements \code{solution},
-\code{status} and \code{message}. If \code{status} = \code{0} the algorithm has converged.
+specified then also at least one of \code{Alb} or \code{Aub}. Returns a list with elements \code{solution} (the solution vector),
+\code{status} (a status code) and \code{message} (a human readable message). If \code{status} = \code{0} the algorithm has converged.
 Possible status codes:
 \itemize{
   \item{\code{0}: Ok}
