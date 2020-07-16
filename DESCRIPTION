@@ -2,13 +2,11 @@ Package: qpmadr
 Type: Package
 Title: Interface to the 'qpmad' Quadratic Programming Solver
 Version: 0.1.0
-Date: 2020-05-19
+Date: 2020-07-16
 Authors@R: c(person("Eric", "Anderson", email="anderic1@gmx.com", role=c("aut","cre")),
     person("Alexander", "Sherikov", role=c("cph", "ctb")))
-Description: 'qpmad' is a C++ implementation of a dual active set algorithm 
-    for quadratic programming by Alexander Sherikov. The method used is 
-    outlined in D. Goldfarb, and A. Idnani (1983) <doi:10.1007/BF02591962>.
-License: GPL (>= 2)
+Description: Efficiently solve quadratic problems with linear inequality, equality and box constraints. The method used is outlined in D. Goldfarb, and A. Idnani (1983) <doi:10.1007/BF02591962>.
+License: GPL (>= 3)
 URL: https://github.com/anderic1/qpmadr
 BugReports: https://github.com/anderic1/qpmadr/issues
 Depends: R (>= 3.0.2)
